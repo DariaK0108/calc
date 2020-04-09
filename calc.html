@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylescalc.css">
+</head>
+
+<body>
+    <div id="main">
+        <form name="f">
+            <input type="text" name="calc" placeholder="0" id="inputnums"/><br />
+            <input type="button" value="1" onclick="f.calc.value+=1" />
+            <input type="button" value="2" onclick="f.calc.value+=2" />
+            <input type="button" value="3" onclick="f.calc.value+=3" />
+            <input type="button" value="+" onclick="add()" />
+            <br />
+            <input type="button" value="4" onclick="f.calc.value+=4" />
+            <input type="button" value="5" onclick="f.calc.value+=5" />
+            <input type="button" value="6" onclick="f.calc.value+=6" />
+            <input type="button" value="-" onclick="sub()" />
+            <br />
+            <input type="button" value="7" onclick="f.calc.value+=7" />
+            <input type="button" value="8" onclick="f.calc.value+=8" />
+            <input type="button" value="9" onclick="f.calc.value+=9" />
+            <input type="button" value="/" onclick="di()" />
+            <br />
+            <input type="button" value="c" onclick="f.calc.value=''" />
+            <input type="button" value="0" onclick="f.calc.value+=0" />
+            <input type="button" value="=" onclick="f.calc.value=eval(f.calc.value)" />
+            <input type="button" value="x" onclick="mul()" />
+
+        </form>
+
+    </div>
+
+    <script>
+        function add() {
+            var act = 0, b = 0;
+            act = f.calc.value;
+            b = act.charAt(act.length-1);
+            <!-- alert(b); -->
+            
+            if (b=='+' || b=='-' || b == '/' || b =='*') {
+                f.calc.value = act.substring(0,act.length-1);
+                f.calc.value += '+';
+            } else {
+                f.calc.value += '+';
+            }
+        }
+
+        function sub() {
+            var act = 0, b = 0;
+            act = f.calc.value;
+            b = act.charAt(act.length-1);
+            
+            if (b=='+' || b=='-' || b == '/' || b =='*') {
+                f.calc.value = act.substring(0,act.length-1);
+                f.calc.value += '-';
+            } else {
+                f.calc.value += '-';
+            }
+        }
+        
+        function di() {
+            var act = 0, b = 0;
+            act = f.calc.value;
+            b = act.charAt(act.length-1);
+           
+            if (b=='+' || b=='-' || b == '/' || b =='*') {
+                f.calc.value = act.substring(0,act.length-1);
+                f.calc.value += '/';
+            } else {
+                f.calc.value += '/';
+            }
+        }
+
+        function mul() {
+            var act = 0, b = 0;
+            act = f.calc.value;
+            b = act.charAt(act.length-1);
+     
+            if (b=='+' || b=='-' || b == '/' || b =='*') {
+                f.calc.value = act.substring(0,act.length-1);
+                f.calc.value += '*';
+            } else {
+                f.calc.value += '*';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
